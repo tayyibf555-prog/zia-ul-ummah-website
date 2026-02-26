@@ -2158,6 +2158,28 @@ button,
     text-align: center;
   }
 
+  /* Header Layout Adjustments */
+  .standalone-logo {
+    left: 1rem !important;
+    top: 1rem !important;
+  }
+
+  .brand-logo-img {
+    height: 70px !important;
+  }
+
+  .nav-glass {
+    left: auto !important;
+    right: 1rem !important;
+    transform: none !important;
+    padding: 0.5rem 1rem !important;
+    width: auto !important;
+  }
+
+  .nav-container {
+    gap: 1rem !important;
+  }
+
   #sponsor-map {
     overflow-x: auto;
     min-width: 100%;
