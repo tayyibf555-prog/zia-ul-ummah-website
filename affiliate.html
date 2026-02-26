@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become an Affiliate | Zia ul Ummah</title>
+
+    <!-- Ultra Premium Meta -->
+    <meta name="description"
+        content="Join the Zia ul Ummah affiliate program. Partner with us and help build the community.">
+
+    <!-- Modern Typefaces -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Outfit for ultra-sleek UI elements, Playfair for elegant headers, Amiri for Arabic -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Pro (Free Tier) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific Affiliate Styles */
+        .affiliate-hero {
+            padding-top: 150px;
+            padding-bottom: 6rem;
+            position: relative;
+            text-align: center;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            height: 100%;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(201, 168, 76, 0.1);
+            color: var(--c-gold-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            box-shadow: 0 0 20px rgba(201, 168, 76, 0.2);
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 3rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="theme-dark">
+
+    <!-- Ambient Background Lighting -->
+    <div class="ambient-light light-1"></div>
+    <div class="ambient-light light-2"></div>
+    <div class="noise-texture"></div>
+
+    <!-- Standalone Logo -->
+    <a href="index.html" class="brand-magnetic standalone-logo" aria-label="Zia ul Ummah Centre">
+        <div class="brand-logo-img"></div>
+    </a>
+
+    <!-- Floating Glass Navbar -->
+    <nav class="nav-glass" id="navbar">
+        <div class="nav-container">
+            <div class="nav-links desktop-only">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="index.html#phases" class="nav-item">The Build</a>
+                <a href="community.html" class="nav-item">Community Hub</a>
+                <a href="affiliate.html" class="nav-item active">Affiliates</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn-ghost desktop-only" onclick="openModal('login')">Portal Login</button>
+                <a href="donate.html" class="btn-primary btn-glow" style="text-decoration: none;">
+                    <span>Donate</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <button class="menu-trigger mobile-only" id="mobile-menu-btn">
+                    <div class="burger-line"></div>
+                    <div class="burger-line"></div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="index.html" class="mobile-nav-item">Home</a>
+            <a href="index.html#phases" class="mobile-nav-item">The Build</a>
+            <a href="community.html" class="mobile-nav-item">Community Hub</a>
+            <a href="affiliate.html" class="mobile-nav-item">Affiliates</a>
+            <a href="donate.html" class="mobile-nav-item" style="color: var(--c-gold-main);">Donate Portal</a>
+            <button class="btn-ghost w-full mt-8" onclick="openModal('login')">Portal Login</button>
+        </div>
+    </div>
+
+    <!-- Affiliate Hero Section -->
+    <section class="affiliate-hero" id="affiliate-top">
+        <div class="container fade-up">
+            <div class="text-gradient-gold mb-4"
+                style="font-weight: 600; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase;">
+                Partnership Program
+            </div>
+            <h1 class="headline-xl mb-4">Become an <span class="text-gradient-gold">Affiliate.</span></h1>
+            <p class="text-gray" style="font-size: 1.25rem; max-width: 700px; margin: 0 auto; line-height: 1.8;">
+                Partner with Zia ul Ummah to help build the future. Share our mission with your network, track your
+                impact, and earn rewards for bringing support to the community.
+            </p>
+            <div style="margin-top: 3rem;">
+                <a href="#apply" class="btn-primary btn-glow"
+                    style="text-decoration: none; display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; padding: 1.2rem 3rem;">
+                    <span>Apply Now</span>
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section style="padding: 4rem 5%; position: relative; overflow: hidden; background: rgba(5,22,13,0.4);"
+        id="how-it-works">
+        <div class="container">
+            <div class="section-intro center fade-up">
+                <h2 class="headline-lg">How It <span class="text-gradient-gold">Works.</span></h2>
+                <p class="text-gray" style="font-size: 1.1rem;">A simple, transparent process to amplify your impact.
+                </p>
+            </div>
+
+            <div class="bento-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 2rem;">
+
+                <div class="bento-item glass-panel border-premium fade-up step-card" style="grid-column: span 1;">
+                    <div class="step-icon"><i class="fa-solid fa-user-plus"></i></div>
+                    <h3 class="headline-md mb-2">1. Register</h3>
+                    <p class="text-gray" style="font-size: 0.95rem;">Submit your application below. Once approved, you
+                        gain access to the partner dashboard.</p>
+                </div>
+
+                <div class="bento-item glass-panel border-premium fade-up step-card"
+                    style="grid-column: span 1; transition-delay: 0.1s;">
+                    <div class="step-icon"><i class="fa-solid fa-link"></i></div>
+                    <h3 class="headline-md mb-2">2. Get Links</h3>
+                    <p class="text-gray" style="font-size: 0.95rem;">Generate unique tracking links and access
+                        professional marketing materials for your campaigns.</p>
+                </div>
+
+                <div class="bento-item glass-panel border-premium fade-up step-card"
+                    style="grid-column: span 1; transition-delay: 0.2s;">
+                    <div class="step-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3 class="headline-md mb-2">3. Track Impact</h3>
+                    <p class="text-gray" style="font-size: 0.95rem;">Monitor the donations generated through your
+                        network in real-time via your personal portal.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section style="padding: 6rem 5%;" id="apply">
+        <div class="container">
+            <div class="bento-item glass-panel border-premium form-container fade-up">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h2 class="headline-lg mb-2">Join the Network</h2>
+                    <p class="text-gray" style="font-size: 1.1rem;">Fill out the form below to initiate your
+                        partnership.</p>
+                </div>
+
+                <form>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>First Name</label>
+                            <input type="text" class="input-premium" placeholder="e.g. Tariq">
+                        </div>
+                        <div class="input-group">
+                            <label>Last Name</label>
+                            <input type="text" class="input-premium" placeholder="e.g. Jameel">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Email Address</label>
+                            <input type="email" class="input-premium" placeholder="name@email.com">
+                        </div>
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <input type="tel" class="input-premium" placeholder="+44 7700 900000">
+                        </div>
+                    </div>
+
+                    <div class="input-group" style="margin-bottom: 2rem;">
+                        <label>How do you plan to promote the campaign?</label>
+                        <textarea class="input-premium" rows="4"
+                            placeholder="Briefly describe your audience (e.g., social media following, community group, mailing list...)"
+                            style="resize: vertical;"></textarea>
+                    </div>
+
+                    <button type="button" class="btn-primary btn-glow w-full"
+                        style="padding: 1.2rem; font-size: 1.1rem;">Submit Application</button>
+                    <p class="text-center text-gray mt-4" style="font-size: 0.85rem;">By applying, you agree to our <a
+                            href="#" class="text-gradient-gold">Terms of Service</a> and <a href="#"
+                            class="text-gradient-gold">Privacy Policy</a>.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ultra Premium Footer -->
+    <footer class="footer-premium border-t border-glass mt-8">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-brand fade-up">
+                    <a href="index.html" class="brand-magnetic">
+                        <div class="brand-mark gold-glow">ZU</div>
+                        <span class="brand-text text-white">Zia ul Ummah</span>
+                    </a>
+                    <p class="text-gray mt-4 max-w-sm">A beacon of light. Not just a place of prostration, but an
+                        institution of education, welfare, and excellence.</p>
+                </div>
+
+                <div class="footer-links fade-up" style="transition-delay: 0.1s;">
+                    <h4 class="text-white mb-4">Explore</h4>
+                    <a href="index.html#vision">The Vision</a>
+                    <a href="index.html#phases">Build Project</a>
+                    <a href="community.html">Programs</a>
+                    <a href="#" onclick="openModal('login')">Member Portal</a>
+                </div>
+
+                <div class="footer-links fade-up" style="transition-delay: 0.2s;">
+                    <h4 class="text-white mb-4">Contact</h4>
+                    <span class="text-gray"><i class="fa-solid fa-location-dot w-6 text-gradient-gold"></i> 123 Islamic
+                        Center Way</span>
+                    <span class="text-gray"><i class="fa-solid fa-phone w-6 text-gradient-gold"></i> +44 123 456
+                        7890</span>
+                    <span class="text-gray"><i class="fa-solid fa-envelope w-6 text-gradient-gold"></i>
+                        info@ziaulummah.org</span>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p class="text-gray-dark">&copy; <span id="year"></span> Zia ul Ummah. Designed for Excellence.</p>
+                <div class="social-pills">
+                    <a href="#" class="social-pill"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-pill"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-pill"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Portal Modal (Glass) -->
+    <div class="modal-backdrop" id="portal-modal">
+        <div class="modal-glass-container">
+            <button class="btn-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+
+            <div class="modal-header">
+                <i class="fa-solid fa-fingerprint text-gradient-gold text-4xl mb-4"></i>
+                <h2 class="headline-md">Access Portal</h2>
+                <p class="text-gray">Manage your donations and memberships.</p>
+            </div>
+
+            <form class="portal-form mt-8">
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" class="input-premium" placeholder="name@email.com">
+                </div>
+                <div class="input-group mt-4">
+                    <label>Secure Password</label>
+                    <input type="password" class="input-premium" placeholder="••••••••">
+                </div>
+
+                <button type="button" class="btn-primary w-full mt-8">Authenticate</button>
+            </form>
+
+            <p class="text-center text-gray mt-6 text-sm">Don't have an account? <a href="#"
+                    class="text-gradient-gold">Register</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

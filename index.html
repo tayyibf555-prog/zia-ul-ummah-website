@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zia ul Ummah | The Light</title>
+
+    <!-- Ultra Premium Meta -->
+    <meta name="description" content="Experience Zia ul Ummah - A beacon of light for the community.">
+
+    <!-- Modern Typefaces -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Outfit for ultra-sleek UI elements, Playfair for elegant headers, Amiri for Arabic -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Pro (Free Tier) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="theme-dark">
+
+    <!-- Cinematic Background Elements -->
+    <div class="ambient-light light-1"></div>
+    <div class="ambient-light light-2"></div>
+    <div class="ambient-light light-3"></div>
+    <div class="noise-texture"></div>
+
+    <!-- Standalone Logo -->
+    <a href="index.html" class="brand-magnetic standalone-logo" aria-label="Zia ul Ummah Centre">
+        <div class="brand-logo-img"></div>
+    </a>
+
+    <!-- Floating Glass Navbar -->
+    <nav class="nav-glass" id="navbar">
+        <div class="nav-container">
+
+            <div class="nav-links desktop-only">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="index.html#phases" class="nav-item">The Build</a>
+                <a href="community.html" class="nav-item">Community Hub</a>
+                <a href="affiliate.html" class="nav-item">Affiliates</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn-ghost desktop-only" onclick="openModal('login')">Portal Login</button>
+                <a href="donate.html" class="btn-primary btn-glow" style="text-decoration: none;">
+                    <span>Donate</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <button class="menu-trigger mobile-only" id="mobile-menu-btn">
+                    <div class="burger-line"></div>
+                    <div class="burger-line"></div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="index.html" class="mobile-nav-item">Home</a>
+            <a href="index.html#phases" class="mobile-nav-item">The Build</a>
+            <a href="community.html" class="mobile-nav-item">Community Hub</a>
+            <a href="affiliate.html" class="mobile-nav-item">Affiliates</a>
+            <a href="donate.html" class="mobile-nav-item" style="color: var(--c-gold-main);">Donate Portal</a>
+            <button class="btn-ghost w-full mt-8" onclick="openModal('login')">Portal Login</button>
+        </div>
+    </div>
+
+    <!-- Hero Section (Cinematic Video Background) -->
+    <section class="hero-cinematic" id="home" style="position: relative; overflow: hidden;">
+        <!-- B-Roll Video Background -->
+        <video autoplay loop muted playsinline class="hero-broll-video"
+            style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: 0; transform: translateX(-50%) translateY(-50%); object-fit: cover; opacity: 0.4;">
+            <!-- Placeholder for actual cinematic footage -->
+            <source src="https://cdn.pixabay.com/video/2020/05/25/40141-426176985_large.mp4" type="video/mp4">
+        </video>
+        <!-- Dark Gradient Overlay for text legibility -->
+        <div
+            style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(5,22,13,0.3) 0%, rgba(5,22,13,1) 100%); z-index: 1;">
+        </div>
+
+        <div
+            style="position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding-top: 80px;">
+
+            <div class="hero-text-content fade-up" style="transition-delay: 0.1s;">
+                <h1 class="headline-xl">Light of the <br><span class="text-gradient-gold">Ummah.</span></h1>
+                <p class="hero-subtitle">Building our community, preserving our faith, and serving humanity together.
+                </p>
+                <div style="margin-top: 2.5rem;">
+                    <a href="donate.html#sponsor-map" class="btn-primary btn-glow"
+                        style="text-decoration: none; display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; padding: 1rem 2.5rem;">
+                        <span>Sponsor a Space</span>
+                        <i class="fa-solid fa-kaaba"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-dashboard glass-panel fade-up" style="transition-delay: 0.2s;">
+                <div class="dashboard-header">
+                    <div class="pulse-indicator">
+                        <div class="pulse-core"></div>
+                        <div class="pulse-ring"></div>
+                    </div>
+                    <span class="live-status">Live Campaign</span>
+                </div>
+
+                <div class="amount-display">
+                    <span class="currency">£</span>
+                    <span class="counter-value" id="hero-raised">0</span>
+                </div>
+                <div class="target-text">Raised of £250,000 Goal</div>
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="hero-progress"></div>
+                    <div class="progress-glow" id="hero-glow"></div>
+                </div>
+
+                <div class="dashboard-footer">
+                    <div class="backers">
+                        <div class="backer-avatars">
+                            <div class="avatar bg-gold">A</div>
+                            <div class="avatar bg-green">Y</div>
+                            <div class="avatar bg-dark"><i class="fa-solid fa-user"></i></div>
+                        </div>
+                        <span>Join 1,240+ Believers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Impact Stats (Minimalist Marquee) -->
+    <div class="marquee-container"
+        style="background: var(--c-gold-main); color: var(--bg-body); padding: 12px 0; border: none; overflow: hidden; white-space: nowrap;">
+        <div class="marquee-track"
+            style="display: inline-flex; gap: 4rem; animation: marqueeScroll 35s linear infinite;">
+            <div style="font-weight: 600; font-size: 0.95rem; text-transform: uppercase;"><i
+                    class="fa-solid fa-graduation-cap" style="margin-right: 8px;"></i> 12 Educational Programs</div>
+            <div style="font-weight: 600; font-size: 0.95rem; text-transform: uppercase;"><i
+                    class="fa-solid fa-hand-holding-heart" style="margin-right: 8px;"></i> 500+ Families Supported</div>
+            <div style="font-weight: 600; font-size: 0.95rem; text-transform: uppercase;"><i
+                    class="fa-solid fa-plate-wheat" style="margin-right: 8px;"></i> 150 Hot Meals Weekly</div>
+            <div style="font-weight: 600; font-size: 0.95rem; text-transform: uppercase;"><i class="fa-solid fa-mosque"
+                    style="margin-right: 8px;"></i> Serving the Community for 15 Years</div>
+            <!-- Duplicates for seamless scroll -->
+            <div style="font-weight: 600; font-size: 0.95rem; text-transform: uppercase;"><i
+                    class="fa-solid fa-graduation-cap" style="margin-right: 8px;"></i> 12 Educational Programs</div>
+            <div style="font-weight: 600; font-size: 0.95rem; text-transform: uppercase;"><i
+                    class="fa-solid fa-hand-holding-heart" style="margin-right: 8px;"></i> 500+ Families Supported</div>
+            <div style="font-weight: 600; font-size: 0.95rem; text-transform: uppercase;"><i
+                    class="fa-solid fa-plate-wheat" style="margin-right: 8px;"></i> 150 Hot Meals Weekly</div>
+            <div style="font-weight: 600; font-size: 0.95rem; text-transform: uppercase;"><i class="fa-solid fa-mosque"
+                    style="margin-right: 8px;"></i> Serving the Community for 15 Years</div>
+        </div>
+    </div>
+
+    <!-- ---------- PRAYER TIMES SECTION ---------- -->
+    <section class="prayer-section" id="prayer-times" style="padding: 4rem 5%;">
+        <div class="container" style="max-width: var(--container-w); margin: 0 auto;">
+            <div class="section-intro fade-up" style="text-align: center; margin-bottom: 3rem;">
+                <h2 class="headline-lg">Daily <span class="text-gradient-gold">Salah.</span></h2>
+                <p class="text-gray" style="font-size: 1.1rem;">"Indeed, prayer has been decreed upon the believers a
+                    decree of specified times." (4:103)</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Highlight Box (Next Prayer) -->
+                <div class="bento-item glass-panel border-premium fade-up"
+                    style="grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; padding: 2.5rem; border-left: 4px solid var(--c-gold-main);">
+                    <div>
+                        <div class="text-gray"
+                            style="text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600;">
+                            Next Jama'at</div>
+                        <h3 class="headline-md text-white" style="margin: 0; font-size: 2.5rem;">Maghrib</h3>
+                    </div>
+                    <div style="text-align: right;">
+                        <div class="text-gradient-gold"
+                            style="font-family: var(--font-sans); font-size: 3.5rem; font-weight: 700; line-height: 1;">
+                            18:45</div>
+                        <div class="text-gray mt-2"><i class="fa-regular fa-clock" style="margin-right: 5px;"></i> In 45
+                            mins</div>
+                    </div>
+                </div>
+
+                <!-- Daily Times Flex Grid -->
+                <div style="grid-column: 1 / -1; display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                    <!-- Fajr -->
+                    <div class="bento-item glass-panel fade-up"
+                        style="flex: 1; min-width: 140px; padding: 1.5rem; text-align: center;">
+                        <div class="text-gray mb-4" style="font-weight: 500;">Fajr</div>
+                        <div class="text-white" style="font-size: 1.75rem; font-weight: 600;">06:30</div>
+                    </div>
+                    <!-- Zuhr -->
+                    <div class="bento-item glass-panel fade-up"
+                        style="flex: 1; min-width: 140px; padding: 1.5rem; text-align: center;">
+                        <div class="text-gray mb-4" style="font-weight: 500;">Zuhr</div>
+                        <div class="text-white" style="font-size: 1.75rem; font-weight: 600;">13:15</div>
+                    </div>
+                    <!-- Asr -->
+                    <div class="bento-item glass-panel fade-up"
+                        style="flex: 1; min-width: 140px; padding: 1.5rem; text-align: center;">
+                        <div class="text-gray mb-4" style="font-weight: 500;">Asr</div>
+                        <div class="text-white" style="font-size: 1.75rem; font-weight: 600;">16:45</div>
+                    </div>
+                    <!-- Isha -->
+                    <div class="bento-item glass-panel fade-up"
+                        style="flex: 1; min-width: 140px; padding: 1.5rem; text-align: center;">
+                        <div class="text-gray mb-4" style="font-weight: 500;">Isha</div>
+                        <div class="text-white" style="font-size: 1.75rem; font-weight: 600;">20:15</div>
+                    </div>
+                    <!-- Jumu'ah -->
+                    <div class="bento-item glass-panel fade-up border-premium"
+                        style="flex: 1; min-width: 140px; padding: 1.5rem; text-align: center; background: rgba(201, 168, 76, 0.05);">
+                        <div class="text-gradient-gold mb-4" style="font-weight: 600;">Jumu'ah</div>
+                        <div class="text-white" style="font-size: 1.75rem; font-weight: 600;">13:30</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Minimalist Marquee -->
+    <div class="marquee-container border-y">
+        <div class="marquee-track" id="marquee">
+            <!-- Populated via JS -->
+        </div>
+    </div>
+
+    <!-- Bento Box: Impact & Vision -->
+    <section class="bento-section" id="vision">
+        <div class="container">
+            <div class="section-intro fade-up">
+                <h2 class="headline-lg">Our <span class="text-gradient-gold">Legacy.</span></h2>
+                <p>15 years of uninterrupted service to the community.</p>
+            </div>
+
+            <div class="bento-grid">
+
+                <!-- Large Image/Mission Box -->
+                <div class="bento-item bento-large glass-panel hover-lift fade-up">
+                    <div class="bento-bg-image hero-pattern"></div>
+                    <div class="bento-content bottom-left">
+                        <h3 class="headline-md text-white">The Mission</h3>
+                        <p class="text-gray flex-grow">A center of excellence, a hub for community empowerment, and a
+                            beacon of light for the ummah. We strive to foster a vibrant community built on core Islamic
+                            values.</p>
+                        <a href="#phases" class="btn-text mt-4">See the future <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Stat Box 1 -->
+                <div class="bento-item bento-square glass-panel hover-lift fade-up" style="transition-delay: 0.1s;">
+                    <div class="bento-icon text-gradient-gold"><i class="fa-solid fa-house-chimney-heart"></i></div>
+                    <div class="bento-content">
+                        <div class="stat-huge">500+</div>
+                        <div class="stat-label">Families Supported</div>
+                    </div>
+                </div>
+
+                <!-- Stat Box 2 -->
+                <div class="bento-item bento-square glass-panel hover-lift fade-up" style="transition-delay: 0.2s;">
+                    <div class="bento-icon text-gradient-gold"><i class="fa-solid fa-book-quran"></i></div>
+                    <div class="bento-content">
+                        <div class="stat-huge">12</div>
+                        <div class="stat-label">Educational Programs</div>
+                    </div>
+                </div>
+
+                <!-- Hadith Wide Box -->
+                <div class="bento-item bento-wide glass-panel hover-lift fade-up"
+                    style="transition-delay: 0.3s; position: relative; overflow: hidden;">
+                    <!-- Giant Watermark Arabic -->
+                    <div class="arabic-watermark">صَدَقَة جَارِيَة</div>
+
+                    <div class="bento-content relative z-10">
+                        <div class="hadith-quote">
+                            "When a man dies, his deeds come to an end except for three things: Sadaqah Jariyah; a
+                            knowledge which is beneficial, or a virtuous descendant who prays for him."
+                        </div>
+                        <div class="hadith-author">— Sahih Muslim</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Imam / Leadership Section -->
+    <section class="leadership-section" id="leadership" style="padding: 4rem 5%; background: var(--bg-body);">
+        <div class="container" style="max-width: var(--container-w); margin: 0 auto;">
+            <div class="section-intro center fade-up">
+                <h2 class="headline-lg">Meet Our <span class="text-gradient-gold">Leadership.</span></h2>
+                <p>Guided by knowledge, grounded in community.</p>
+            </div>
+
+            <div class="bento-grid" style="grid-template-columns: repeat(12, 1fr); margin-top: 2rem;">
+
+                <!-- Imam Photo/Placeholder Box -->
+                <div class="bento-item glass-panel fade-up"
+                    style="grid-column: span 4; display: flex; align-items: center; justify-content: center; min-height: 400px; padding: 0; overflow: hidden; position: relative;">
+                    <!-- Placeholder for actual image -->
+                    <div
+                        style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(5,22,13,0.2), rgba(5,22,13,0.9)); z-index: 1;">
+                    </div>
+                    <div
+                        style="background-color: #1a2920; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; border-bottom: 3px solid var(--c-gold-main);">
+                        <i class="fa-solid fa-user-tie text-gradient-gold" style="font-size: 5rem; opacity: 0.5;"></i>
+                    </div>
+                </div>
+
+                <!-- Imam Welcome Text Box -->
+                <div class="bento-item glass-panel hover-lift fade-up"
+                    style="grid-column: span 8; padding: 3rem; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden;">
+                    <!-- Decorative Icon -->
+                    <i class="fa-solid fa-quote-left text-gradient-gold"
+                        style="font-size: 8rem; position: absolute; top: -10px; right: 20px; opacity: 0.05; z-index: 0;"></i>
+
+                    <div style="position: relative; z-index: 1;">
+                        <h3 class="headline-md text-white mb-2">Imam [Name]</h3>
+                        <div class="text-gradient-gold mb-4"
+                            style="font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.85rem;">
+                            Head Scholar & Community Director</div>
+
+                        <p class="text-gray" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                            "Welcome to Zia-ul-Ummah Centre. For over 15 years, our doors have been open to families,
+                            seekers of knowledge, and those looking for spiritual grounding. Our vision is to cultivate
+                            an environment where faith is lived, understood, and shared beautifully with the wider
+                            world."
+                        </p>
+
+                        <a href="#contact" class="btn-text">Read Full Biography <i class="fa-solid fa-arrow-right"
+                                style="margin-left: 5px;"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- The 3D Build Interface -->
+    <section class="build-section" id="phases">
+        <div class="container">
+            <div class="section-intro center fade-up">
+                <h2 class="headline-lg">The Architecture of <span class="text-gradient-gold">Tomorrow.</span></h2>
+                <p>Interact with the 3D model to explore our expansion phases.</p>
+            </div>
+
+            <div class="build-interface glass-panel border-premium fade-up">
+
+                <!-- Controls -->
+                <div class="phase-controls">
+                    <button class="phase-tab active" data-phase="0">
+                        <span class="step-num">00</span> Interior
+                    </button>
+                    <button class="phase-tab" data-phase="1">
+                        <span class="step-num">01</span> Foundation
+                    </button>
+                    <button class="phase-tab" data-phase="2">
+                        <span class="step-num">02</span> Structure
+                    </button>
+                    <button class="phase-tab" data-phase="3">
+                        <span class="step-num">03</span> The Apex
+                    </button>
+                </div>
+
+                <div class="build-display-area">
+
+                    <!-- Text Info Side -->
+                    <div class="phase-info-blocks">
+                        <div class="info-block active" id="desc-phase-0">
+                            <h3 class="headline-md">Laying the Groundwork</h3>
+                            <p class="text-gray">Our journey begins with the foundation. This phase establishes the
+                                subtle, stepped base and the inner prayer area floor plan—the literal groundwork upon
+                                which our community will gather.</p>
+                            <div class="status-badge">Completed</div>
+                        </div>
+
+                        <div class="info-block" id="desc-phase-1">
+                            <h3 class="headline-md">Walls of Unity</h3>
+                            <p class="text-gray">Raising the expansive earth-toned exterior walls. This phase defines
+                                the main hall's volume, featuring distinct circular and arched window cutouts to allow
+                                natural light to fill the spiritual space.</p>
+                            <div class="mini-progress">
+                                <div class="prog-text"><span>£45,000 raised</span> <span>Goal: £80k</span></div>
+                                <div class="prog-bar">
+                                    <div class="fill" style="width: 56%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-block" id="desc-phase-2">
+                            <h3 class="headline-md">The Welcoming Arch</h3>
+                            <p class="text-gray">Constructing the distinguished front entrance porch and the raised roof
+                                parapets. The massive pointed archway serves as a beautiful, welcoming gateway for all
+                                who enter.</p>
+                            <div class="mini-progress">
+                                <div class="prog-text"><span>£5,700 raised</span> <span>Goal: £60k</span></div>
+                                <div class="prog-bar">
+                                    <div class="fill" style="width: 9%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-block" id="desc-phase-3">
+                            <h3 class="headline-md">The Guiding Beacon</h3>
+                            <p class="text-gray">Erecting the single, towering minaret adorned with its golden finial.
+                                This final architectural piece completes the structure, serving as a landmark of faith
+                                and community.</p>
+                            <div class="mini-progress">
+                                <div class="prog-text"><span>£0 raised</span> <span>Goal: £40k</span></div>
+                                <div class="prog-bar">
+                                    <div class="fill" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn-primary w-full mt-6"
+                            onclick="document.getElementById('donate').scrollIntoView();">Fund This Phase</button>
+                    </div>
+
+                    <!-- 3D Model Side -->
+                    <div class="model-viewport">
+                        <div class="viewport-grid"></div>
+                        <!-- THE 3D MASTER ARCHITECTURE (V2.1 Earth-Toned Geometric) -->
+                        <!-- Built ground-up: Foundation -> Walls -> Entrance -> Minaret -->
+                        <div class="scene-3d">
+                            <div class="masjid-3d phase-0-state" id="masjid-container">
+
+                                <!-- PHASE 0: Base & Floorplan -->
+                                <div class="base-group" id="phase-base">
+                                    <div class="cube base-tier">
+                                        <div class="face top"></div>
+                                        <div class="face front shadow-front"></div>
+                                        <div class="face left shadow-left"></div>
+                                    </div>
+                                </div>
+
+                                <!-- PHASE 0: Interior Core (Animated inner walls) -->
+                                <div class="interior-group" id="phase-interior">
+                                    <!-- Glowing floor carpet -->
+                                    <div class="cube inner-carpet">
+                                        <div class="face top"></div>
+                                    </div>
+                                    <!-- Center glowing block representing minbar/mihrab -->
+                                    <div class="cube inner-block">
+                                        <div class="face top"></div>
+                                        <div class="face front shadow-front"></div>
+                                        <div class="face left shadow-left"></div>
+                                    </div>
+                                    <!-- Transparent Glass-like partition pillars -->
+                                    <div class="cube inner-wall iw-1">
+                                        <div class="face top"></div>
+                                        <div class="face front shadow-front"></div>
+                                        <div class="face left shadow-left"></div>
+                                    </div>
+                                    <div class="cube inner-wall iw-2">
+                                        <div class="face top"></div>
+                                        <div class="face front shadow-front"></div>
+                                        <div class="face left shadow-left"></div>
+                                    </div>
+                                    <div class="cube inner-wall iw-3">
+                                        <div class="face top"></div>
+                                        <div class="face front shadow-front"></div>
+                                        <div class="face left shadow-left"></div>
+                                    </div>
+                                    <div class="cube inner-wall iw-4">
+                                        <div class="face top"></div>
+                                        <div class="face front shadow-front"></div>
+                                        <div class="face left shadow-left"></div>
+                                    </div>
+                                </div>
+
+                                <!-- PHASE 1: Main Hall Ext Walls -->
+                                <div class="main-hall-group" id="phase-hall">
+                                    <div class="cube main-hall">
+                                        <!-- Front face with arched windows -->
+                                        <div class="face front shadow-front">
+                                            <div class="arch-window left-w"></div>
+                                            <div class="arch-window right-w"></div>
+                                        </div>
+                                        <div class="face back"></div>
+                                        <!-- Left face with circular window cutouts -->
+                                        <div class="face left shadow-left">
+                                            <div class="circle-window c1"></div>
+                                            <div class="circle-window c2"></div>
+                                            <div class="circle-window c3"></div>
+                                        </div>
+                                        <div class="face right"></div>
+                                        <div class="face top"></div> <!-- Flat roof base -->
+                                    </div>
+                                </div>
+
+                                <!-- PHASE 2: Front Porch & Parapets -->
+                                <div class="porch-group" id="phase-porch">
+                                    <!-- Elevated flat roof parapet borders -->
+                                    <div class="cube roof-parapet p-front">
+                                        <div class="face front shadow-front"></div>
+                                        <div class="face left shadow-left"></div>
+                                        <div class="face top"></div>
+                                        <div class="face back"></div>
+                                    </div>
+                                    <div class="cube roof-parapet p-left">
+                                        <div class="face front shadow-front"></div>
+                                        <div class="face left shadow-left"></div>
+                                        <div class="face top"></div>
+                                    </div>
+                                    <div class="cube roof-parapet p-right">
+                                        <div class="face front shadow-front"></div>
+                                        <div class="face right"></div>
+                                        <div class="face top"></div>
+                                    </div>
+                                    <div class="cube roof-parapet p-back">
+                                        <div class="face back"></div>
+                                        <div class="face left shadow-left"></div>
+                                        <div class="face top"></div>
+                                    </div>
+
+                                    <!-- Protruding Front Entrance block -->
+                                    <div class="cube front-porch">
+                                        <div class="face front shadow-front">
+                                            <div class="grand-arch"></div> <!-- The large pointed archway -->
+                                        </div>
+                                        <div class="face left shadow-left">
+                                            <div class="arch-window small"></div>
+                                        </div>
+                                        <div class="face right">
+                                            <div class="arch-window small"></div>
+                                        </div>
+                                        <div class="face top"></div>
+                                    </div>
+                                    <!-- Porch stepped entry -->
+                                    <div class="cube porch-steps">
+                                        <div class="face top"></div>
+                                        <div class="face front shadow-front"></div>
+                                        <div class="face left shadow-left"></div>
+                                    </div>
+                                </div>
+
+                                <!-- PHASE 3: The Single Minaret -->
+                                <div class="minaret-group" id="phase-minaret">
+                                    <div class="cube tall-minaret">
+                                        <div class="face front shadow-front">
+                                            <div class="minaret-slit m1"></div>
+                                            <div class="minaret-slit m2"></div>
+                                        </div>
+                                        <div class="face left shadow-left">
+                                            <div class="minaret-slit m1"></div>
+                                            <div class="minaret-slit m2"></div>
+                                        </div>
+                                        <div class="face right"></div>
+                                        <div class="face back"></div>
+                                        <div class="face top"></div>
+                                        <!-- Top tier architectural element -->
+                                        <div class="cube minaret-top">
+                                            <div class="face front shadow-front">
+                                                <div class="min-arch"></div>
+                                            </div>
+                                            <div class="face left shadow-left">
+                                                <div class="min-arch"></div>
+                                            </div>
+                                            <div class="face top"></div>
+                                            <div class="finial gold"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Minaret stepped base -->
+                                    <div class="cube minaret-base">
+                                        <div class="face top"></div>
+                                        <div class="face front shadow-front"></div>
+                                        <div class="face left shadow-left"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- Visit Us / New to Islam CTA Section -->
+    <section class="visit-cta-section" id="visit" style="padding: 4rem 5%; position: relative;">
+        <!-- Subtle background glow -->
+        <div
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: 50%; background: var(--c-green-light); filter: blur(150px); opacity: 0.1; z-index: 0; pointer-events: none;">
+        </div>
+
+        <div class="container" style="max-width: var(--container-w); margin: 0 auto; position: relative; z-index: 1;">
+            <div class="glass-panel border-premium fade-up"
+                style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 4rem 2rem; background: linear-gradient(135deg, rgba(8,30,18,0.8) 0%, rgba(5,22,13,0.95) 100%); position: relative; overflow: hidden;">
+
+                <!-- Watermark -->
+                <i class="fa-solid fa-mosque text-gradient-gold"
+                    style="font-size: 15rem; position: absolute; left: -5%; bottom: -20%; opacity: 0.03; transform: rotate(-15deg);"></i>
+                <i class="fa-solid fa-leaf text-gradient-gold"
+                    style="font-size: 15rem; position: absolute; right: -5%; top: -20%; opacity: 0.03; transform: rotate(15deg);"></i>
+
+                <div class="bento-icon text-gradient-gold mb-4 text-4xl"><i class="fa-solid fa-door-open"
+                        style="font-size: 2.5rem;"></i></div>
+                <h2 class="headline-lg text-white mb-4">New to <span class="text-gradient-gold">Islam?</span> Or Just
+                    Curious?</h2>
+                <p class="text-gray mb-8" style="font-size: 1.2rem; max-width: 600px; line-height: 1.6;">
+                    Whether you are taking your first steps into exploring faith, looking to take your Shahadah, or a
+                    neighbour wanting a guided tour of the Centre, our doors are always open to you.
+                </p>
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
+                    <a href="#contact" class="btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Plan a Visit
+                        <i class="fa-solid fa-calendar-check" style="margin-left: 8px;"></i></a>
+                    <a href="#contact" class="btn-ghost"
+                        style="padding: 1rem 2.5rem; font-size: 1.1rem; border-color: rgba(255,255,255,0.2);">Ask the
+                        Imam <i class="fa-regular fa-envelope" style="margin-left: 8px;"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fintech Style Donate -->
+    <section class="donate-fintech" id="donate">
+        <div class="container">
+            <div class="donate-wrapper glass-panel border-premium fade-up">
+
+                <div class="donate-header">
+                    <h2 class="headline-md">Secure Your <span class="text-gradient-gold">Akhirah.</span></h2>
+                    <p class="text-gray">100% donation policy. SSL Encrypted.</p>
+                </div>
+
+                <div class="donate-ui">
+                    <!-- Type Toggle -->
+                    <div class="segment-control">
+                        <button class="seg-btn active" data-type="one-time">One-time</button>
+                        <button class="seg-btn" data-type="monthly">Monthly</button>
+                    </div>
+
+                    <!-- Amounts -->
+                    <div class="amount-grid">
+                        <button class="amt-btn" data-val="25">£25</button>
+                        <button class="amt-btn active" data-val="50">£50</button>
+                        <button class="amt-btn" data-val="100">£100</button>
+                        <button class="amt-btn" data-val="250">£250</button>
+                    </div>
+
+                    <div class="custom-input-wrapper">
+                        <span class="currency-prefix">£</span>
+                        <input type="number" id="custom-donation" class="input-premium" placeholder="Custom Amount">
+                    </div>
+
+                    <button class="btn-primary btn-massive w-full" id="final-donate-btn">
+                        Donate £50
+                    </button>
+
+                    <div class="secure-badge">
+                        <i class="fa-solid fa-lock text-green-light"></i> Secure Checkout Powered by Stripe
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Community Cards -->
+    <section class="community-grid-section" id="community">
+        <div class="container">
+            <div class="section-intro fade-up">
+                <h2 class="headline-lg">Active <span class="text-gradient-gold">Community.</span></h2>
+            </div>
+
+            <!-- Horizontal Scroll on Mobile, Grid on Desktop -->
+            <div class="cards-grid">
+
+                <div class="hover-card glass-panel fade-up">
+                    <div class="card-icon bg-gold-light"><i class="fa-solid fa-users-rays"></i></div>
+                    <h3 class="headline-sm">Jummah Khutbah</h3>
+                    <p class="text-gray">Inspiring weekly sermons addressing contemporary issues.</p>
+                    <div class="card-footer">Every Friday 1:15pm</div>
+                </div>
+
+                <div class="hover-card glass-panel fade-up" style="transition-delay: 0.1s;">
+                    <div class="card-icon bg-dark-green"><i class="fa-solid fa-book-open-reader"></i></div>
+                    <h3 class="headline-sm">Quran Institute</h3>
+                    <p class="text-gray">Structured Hifz and Tajweed programs for all ages.</p>
+                    <div class="card-footer">Mon-Thu Evenings</div>
+                </div>
+
+                <div class="hover-card glass-panel fade-up" style="transition-delay: 0.2s;">
+                    <div class="card-icon bg-gold-light"><i class="fa-solid fa-people-group"></i></div>
+                    <h3 class="headline-sm">Youth Circle</h3>
+                    <p class="text-gray">A safe space for teenagers to connect with faith.</p>
+                    <div class="card-footer">Saturdays 5:00pm</div>
+                </div>
+
+                <div class="hover-card glass-panel fade-up" style="transition-delay: 0.3s;">
+                    <div class="card-icon bg-dark-green"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <h3 class="headline-sm">Food Bank</h3>
+                    <p class="text-gray">Serving over 100 hot meals weekly to the vulnerable.</p>
+                    <div class="card-footer">Sundays 12:00pm</div>
+                </div>
+
+            </div>
+        </div>
+        <!-- WhatsApp Community CTA Section -->
+        <section class="whatsapp-cta-section"
+            style="padding: clamp(3rem, 8vw, 6rem) 5%; position: relative; overflow: hidden;">
+            <!-- Background Elements -->
+            <div
+                style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, var(--c-bg-surface) 0%, rgba(10, 66, 27, 0.4) 100%); z-index: 0;">
+            </div>
+            <div class="ambient-light"
+                style="width: 40vw; height: 40vw; background: #25D366; right: -10%; bottom: -10%; opacity: 0.15; z-index: 0;">
+            </div>
+
+            <div class="container" style="position: relative; z-index: 2; max-width: 900px;">
+                <div class="bento-item glass-panel border-premium fade-up"
+                    style="text-align: center; padding: 4rem 2rem; background: rgba(5, 22, 13, 0.6); border-color: rgba(37, 211, 102, 0.2);">
+                    <div
+                        style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #25D366, #128C7E); margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);">
+                        <i class="fa-brands fa-whatsapp text-white" style="font-size: 2.5rem;"></i>
+                    </div>
+
+                    <h2 class="headline-md text-white mb-4" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">Stay
+                        Connected with the <span style="color: #25D366;">Community</span></h2>
+                    <p class="text-gray mb-8"
+                        style="font-size: clamp(1rem, 3vw, 1.15rem); max-width: 600px; margin-left: auto; margin-right: auto;">
+                        Join our
+                        official WhatsApp channel for instant updates on prayer times, community events, educational
+                        programs, and the latest news on the new center build.</p>
+
+                    <a href="#" class="btn-primary"
+                        style="background: linear-gradient(135deg, #25D366, #128C7E); color: white; display: inline-flex; align-items: center; justify-content: center; gap: 12px; font-size: clamp(1rem, 3vw, 1.1rem); padding: 1.2rem 3rem; text-decoration: none; border-radius: 50px; font-weight: 600; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); transition: all 0.3s ease; width: fit-content; max-width: 100%;">
+                        <span>Join WhatsApp Channel</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <div class="mt-6 text-gray-dark"
+                        style="font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <i class="fa-solid fa-shield-halved"></i> Only admins can post. Your privacy is protected.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ultra Premium Footer -->
+        <footer class="footer-premium border-t border-glass">
+            <div class="container">
+                <div class="footer-grid">
+
+                    <div class="footer-brand fade-up">
+                        <a href="#" class="brand-magnetic">
+                            <div class="brand-mark gold-glow">ZU</div>
+                            <span class="brand-text text-white">Zia ul Ummah</span>
+                        </a>
+                        <p class="text-gray mt-4 max-w-sm">A beacon of light. Not just a place of prostration, but an
+                            institution of education, welfare, and excellence.</p>
+                    </div>
+
+                    <div class="footer-links fade-up" style="transition-delay: 0.1s;">
+                        <h4 class="text-white mb-4">Explore</h4>
+                        <a href="#vision">The Vision</a>
+                        <a href="#phases">Build Project</a>
+                        <a href="#community">Programs</a>
+                        <a href="#" onclick="openModal('login')">Member Portal</a>
+                    </div>
+
+                    <div class="footer-links fade-up" style="transition-delay: 0.2s;">
+                        <h4 class="text-white mb-4">Contact</h4>
+                        <span class="text-gray"><i class="fa-solid fa-location-dot w-6 text-gradient-gold"></i> 123
+                            Islamic
+                            Center Way</span>
+                        <span class="text-gray"><i class="fa-solid fa-phone w-6 text-gradient-gold"></i> +44 123 456
+                            7890</span>
+                        <span class="text-gray"><i class="fa-solid fa-envelope w-6 text-gradient-gold"></i>
+                            info@ziaulummah.org</span>
+                    </div>
+
+                </div>
+
+                <div class="footer-bottom">
+                    <p class="text-gray-dark">&copy; <span id="year"></span> Zia ul Ummah. Designed for Excellence.</p>
+                    <div class="social-pills">
+                        <a href="#" class="social-pill"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-pill"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-pill"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Portal Modal (Glass) -->
+        <div class="modal-backdrop" id="portal-modal">
+            <div class="modal-glass-container">
+                <button class="btn-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+
+                <div class="modal-header">
+                    <i class="fa-solid fa-fingerprint text-gradient-gold text-4xl mb-4"></i>
+                    <h2 class="headline-md">Access Portal</h2>
+                    <p class="text-gray">Manage your donations and memberships.</p>
+                </div>
+
+                <form class="portal-form mt-8">
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" class="input-premium" placeholder="name@email.com">
+                    </div>
+                    <div class="input-group mt-4">
+                        <label>Secure Password</label>
+                        <input type="password" class="input-premium" placeholder="••••••••">
+                    </div>
+
+                    <button type="button" class="btn-primary w-full mt-8">Authenticate</button>
+                </form>
+
+                <p class="text-center text-gray mt-6 text-sm">Don't have an account? <a href="#"
+                        class="text-gradient-gold">Register</a></p>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zia ul Ummah | The Light</title>
+
+    <!-- Ultra Premium Meta -->
+    <meta name="description" content="Experience Zia ul Ummah - A beacon of light for the community.">
+
+    <!-- Modern Typefaces -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Outfit for ultra-sleek UI elements, Playfair for elegant headers, Amiri for Arabic -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Pro (Free Tier) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="theme-dark">
+
+    <!-- Cinematic Background Elements -->
+    <div class="ambient-light light-1"></div>
+    <div class="ambient-light light-2"></div>
+    <div class="ambient-light light-3"></div>
+    <div class="noise-texture"></div>
+
+    <!-- Standalone Logo -->
+    <a href="index.html" class="brand-magnetic standalone-logo" aria-label="Zia ul Ummah Centre">
+        <div class="brand-logo-img"></div>
+    </a>
+
+    <!-- Floating Glass Navbar -->
+    <nav class="nav-glass" id="navbar">
+        <div class="nav-container">
+
+            <div class="nav-links desktop-only">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="index.html#phases" class="nav-item">The Build</a>
+                <a href="community.html" class="nav-item">Community Hub</a>
+                <a href="affiliate.html" class="nav-item">Affiliates</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn-ghost desktop-only" onclick="openModal('login')">Portal Login</button>
+                <a href="donate.html" class="btn-primary btn-glow" style="text-decoration: none;">
+                    <span>Donate</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <button class="menu-trigger mobile-only" id="mobile-menu-btn">
+                    <div class="burger-line"></div>
+                    <div class="burger-line"></div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="index.html" class="mobile-nav-item">Home</a>
+            <a href="index.html#phases" class="mobile-nav-item">The Build</a>
+            <a href="community.html" class="mobile-nav-item">Community Hub</a>
+            <a href="affiliate.html" class="mobile-nav-item">Affiliates</a>
+            <a href="donate.html" class="mobile-nav-item" style="color: var(--c-gold-main);">Donate Portal</a>
+            <button class="btn-ghost w-full mt-8" onclick="openModal('login')">Portal Login</button>
+        </div>
+    </div>
+
+    <!-- Gamified Donation Dashboard -->
+    <section class="donate-interactive" style="padding: 150px 2% 4rem;">
+        <div class="container" style="max-width: 100%; margin: 0 auto;">
+            <div class="bento-grid" style="grid-template-columns: repeat(12, 1fr); grid-auto-rows: auto;">
+
+                <!-- Sponsor Map (Full Width) -->
+                <div class="bento-item glass-panel border-premium"
+                    style="grid-column: span 12; padding: 2rem; display: flex; flex-direction: column;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+                        <div>
+                            <div class="text-gradient-gold mb-2"
+                                style="font-weight: 600; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">
+                                Interactive Plan</div>
+                            <h3 class="headline-md text-white mb-2" style="font-size: 2.5rem; line-height: 1.1;">Sponsor
+                                a
+                                <br>Musallah
+                            </h3>
+                            <p class="text-gray" style="font-size: 1.1rem; max-width: 400px;">Click an available spot on
+                                the new Main Hall floor plan to claim your legacy.</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="status-badge"
+                                style="background: rgba(201,168,76,0.1); color: var(--c-gold-main); font-size: 1.5rem; padding: 0.75rem 1.5rem;">
+                                £500 <span style="font-size: 0.9rem; opacity: 0.8;">/ spot</span>
+                            </div>
+                            <div class="mt-4" style="font-size: 0.95rem; color: var(--c-text-secondary);">
+                                <span
+                                    style="display: inline-block; width: 12px; height: 12px; background: transparent; border: 2px solid var(--c-gold-main); border-radius: 2px; margin-right: 5px; vertical-align: middle;"></span>
+                                Available
+                                <span style="margin: 0 10px; opacity: 0.3;">|</span>
+                                <span
+                                    style="display: inline-block; width: 12px; height: 12px; background: var(--c-gold-main); border-radius: 2px; margin-right: 5px; vertical-align: middle;"></span>
+                                Sponsored
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The interactive grid map -->
+                    <div id="sponsor-map"
+                        style="display: grid; grid-template-columns: repeat(25, 1fr); gap: 0; background: rgba(5,22,13,0.5); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);">
+                        <!-- JS Will Populate squares here -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Fintech Style Donate -->
+    <section class="donate-fintech" id="donate">
+        <div class="container">
+            <div class="donate-wrapper glass-panel border-premium fade-up">
+
+                <div class="donate-header">
+                    <h2 class="headline-md">Secure Your <span class="text-gradient-gold">Akhirah.</span></h2>
+                    <p class="text-gray">100% donation policy. SSL Encrypted.</p>
+                </div>
+
+                <div class="donate-ui">
+                    <!-- Type Toggle -->
+                    <div class="segment-control">
+                        <button class="seg-btn active" data-type="one-time">One-time</button>
+                        <button class="seg-btn" data-type="monthly">Monthly</button>
+                    </div>
+
+                    <!-- Amounts -->
+                    <div class="amount-grid">
+                        <button class="amt-btn" data-val="25">£25</button>
+                        <button class="amt-btn active" data-val="50">£50</button>
+                        <button class="amt-btn" data-val="100">£100</button>
+                        <button class="amt-btn" data-val="250">£250</button>
+                    </div>
+
+                    <div class="custom-input-wrapper">
+                        <span class="currency-prefix">£</span>
+                        <input type="number" id="custom-donation" class="input-premium" placeholder="Custom Amount">
+                    </div>
+
+                    <button class="btn-primary btn-massive w-full" id="final-donate-btn">
+                        Donate £50
+                    </button>
+
+                    <div class="secure-badge">
+                        <i class="fa-solid fa-lock text-green-light"></i> Secure Checkout Powered by Stripe
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Community Cards -->
+    <section class="community-grid-section" id="community">
+        <div class="container">
+            <div class="section-intro fade-up">
+                <h2 class="headline-lg">Active <span class="text-gradient-gold">Community.</span></h2>
+            </div>
+
+            <!-- Horizontal Scroll on Mobile, Grid on Desktop -->
+            <div class="cards-grid">
+
+                <div class="hover-card glass-panel fade-up">
+                    <div class="card-icon bg-gold-light"><i class="fa-solid fa-users-rays"></i></div>
+                    <h3 class="headline-sm">Jummah Khutbah</h3>
+                    <p class="text-gray">Inspiring weekly sermons addressing contemporary issues.</p>
+                    <div class="card-footer">Every Friday 1:15pm</div>
+                </div>
+
+                <div class="hover-card glass-panel fade-up" style="transition-delay: 0.1s;">
+                    <div class="card-icon bg-dark-green"><i class="fa-solid fa-book-open-reader"></i></div>
+                    <h3 class="headline-sm">Quran Institute</h3>
+                    <p class="text-gray">Structured Hifz and Tajweed programs for all ages.</p>
+                    <div class="card-footer">Mon-Thu Evenings</div>
+                </div>
+
+                <div class="hover-card glass-panel fade-up" style="transition-delay: 0.2s;">
+                    <div class="card-icon bg-gold-light"><i class="fa-solid fa-people-group"></i></div>
+                    <h3 class="headline-sm">Youth Circle</h3>
+                    <p class="text-gray">A safe space for teenagers to connect with faith.</p>
+                    <div class="card-footer">Saturdays 5:00pm</div>
+                </div>
+
+                <div class="hover-card glass-panel fade-up" style="transition-delay: 0.3s;">
+                    <div class="card-icon bg-dark-green"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <h3 class="headline-sm">Food Bank</h3>
+                    <p class="text-gray">Serving over 100 hot meals weekly to the vulnerable.</p>
+                    <div class="card-footer">Sundays 12:00pm</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ultra Premium Footer -->
+    <footer class="footer-premium border-t border-glass">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-brand fade-up">
+                    <a href="#" class="brand-magnetic">
+                        <div class="brand-mark gold-glow">ZU</div>
+                        <span class="brand-text text-white">Zia ul Ummah</span>
+                    </a>
+                    <p class="text-gray mt-4 max-w-sm">A beacon of light. Not just a place of prostration, but an
+                        institution of education, welfare, and excellence.</p>
+                </div>
+
+                <div class="footer-links fade-up" style="transition-delay: 0.1s;">
+                    <h4 class="text-white mb-4">Explore</h4>
+                    <a href="#vision">The Vision</a>
+                    <a href="#phases">Build Project</a>
+                    <a href="#community">Programs</a>
+                    <a href="#" onclick="openModal('login')">Member Portal</a>
+                </div>
+
+                <div class="footer-links fade-up" style="transition-delay: 0.2s;">
+                    <h4 class="text-white mb-4">Contact</h4>
+                    <span class="text-gray"><i class="fa-solid fa-location-dot w-6 text-gradient-gold"></i> 123 Islamic
+                        Center Way</span>
+                    <span class="text-gray"><i class="fa-solid fa-phone w-6 text-gradient-gold"></i> +44 123 456
+                        7890</span>
+                    <span class="text-gray"><i class="fa-solid fa-envelope w-6 text-gradient-gold"></i>
+                        info@ziaulummah.org</span>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p class="text-gray-dark">&copy; <span id="year"></span> Zia ul Ummah. Designed for Excellence.</p>
+                <div class="social-pills">
+                    <a href="#" class="social-pill"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-pill"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-pill"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Portal Modal (Glass) -->
+    <div class="modal-backdrop" id="portal-modal">
+        <div class="modal-glass-container">
+            <button class="btn-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+
+            <div class="modal-header">
+                <i class="fa-solid fa-fingerprint text-gradient-gold text-4xl mb-4"></i>
+                <h2 class="headline-md">Access Portal</h2>
+                <p class="text-gray">Manage your donations and memberships.</p>
+            </div>
+
+            <form class="portal-form mt-8">
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" class="input-premium" placeholder="name@email.com">
+                </div>
+                <div class="input-group mt-4">
+                    <label>Secure Password</label>
+                    <input type="password" class="input-premium" placeholder="••••••••">
+                </div>
+
+                <button type="button" class="btn-primary w-full mt-8">Authenticate</button>
+            </form>
+
+            <p class="text-center text-gray mt-6 text-sm">Don't have an account? <a href="#"
+                    class="text-gradient-gold">Register</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
