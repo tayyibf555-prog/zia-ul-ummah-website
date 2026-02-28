@@ -97,6 +97,96 @@
         </div>
     </section>
 
+    <style>
+        .mission-stats-container {
+            margin: 0 auto 4rem auto;
+            max-width: 1200px;
+            padding: 0 5%;
+        }
+
+        .mission-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background: var(--glass-border);
+            gap: 1px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+        }
+
+        .mission-stats-grid .stat-block {
+            background: rgba(10, 30, 18, 0.85);
+            backdrop-filter: blur(20px);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .mission-stats-grid .stat-block:hover {
+            background: rgba(15, 45, 25, 0.95);
+        }
+
+        @media (max-width: 900px) {
+            .mission-stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <!-- Global Network Stats -->
+    <section class="mission-stats-container fade-up" style="transition-delay: 0.2s;">
+        <div class="mission-stats-grid">
+
+            <!-- Stat 1 -->
+            <div class="stat-block">
+                <div class="ambient-light" style="width: 100%; height: 100%; top: 0; left: 0; opacity: 0.05;"></div>
+                <div class="text-gradient-gold"
+                    style="font-family: 'Playfair Display', serif; font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 700; line-height: 1; margin-bottom: 1rem; position: relative;">
+                    250+
+                </div>
+                <div class="text-white"
+                    style="font-size: 1.15rem; font-weight: 500; letter-spacing: 0.02em; position: relative; line-height: 1.4;">
+                    DMG/GGC Branches<br><span style="color: var(--c-text-secondary);">(Pakistan)</span>
+                </div>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="stat-block">
+                <div class="ambient-light"
+                    style="width: 100%; height: 100%; top: 0; left: 0; opacity: 0.05; background: var(--c-gold-main);">
+                </div>
+                <div class="text-gradient-gold"
+                    style="font-family: 'Playfair Display', serif; font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 700; line-height: 1; padding-bottom: 0.5rem; position: relative;">
+                    25,000<br>
+                    <span style="font-size: clamp(2rem, 3vw, 3rem);">+</span>
+                </div>
+                <div class="text-white"
+                    style="font-size: 1.15rem; font-weight: 500; letter-spacing: 0.02em; position: relative; line-height: 1.4;">
+                    Students in the Network
+                </div>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="stat-block">
+                <div class="ambient-light" style="width: 100%; height: 100%; top: 0; left: 0; opacity: 0.05;"></div>
+                <div class="text-gradient-gold"
+                    style="font-family: 'Playfair Display', serif; font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 700; line-height: 1; margin-bottom: 1rem; position: relative;">
+                    500+
+                </div>
+                <div class="text-white"
+                    style="font-size: 1.15rem; font-weight: 500; letter-spacing: 0.02em; position: relative; line-height: 1.4;">
+                    British Islamic Scholars<br><span style="color: var(--c-text-secondary);">(Jamia Al-Karam)</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Bento Box: Impact & Vision -->
     <section class="bento-section" id="vision" style="padding-top: 2rem;">
         <div class="container">
