@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Successful | Zia ul Ummah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            background: var(--bg-body);
+        }
+
+        .success-card {
+            background: rgba(10, 30, 18, 0.85);
+            backdrop-filter: blur(20px);
+            padding: 4rem;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            max-width: 600px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const sessionId = urlParams.get('session_id');
+
+            if (sessionId) {
+                const response = await fetch(`/session-status?session_id=${sessionId}`);
+                const session = await response.json();
+
+                if (session.status == 'open') {
+                    window.replace('donate.html')
+                } else if (session.status == 'complete') {
+                    document.getElementById('success-message').classList.remove('hidden');
+                    document.getElementById('customer-email').textContent = session.customer_email;
+                }
+            }
+        });
+    </script>
+</head>
+
+<body class="theme-dark">
+    <div class="success-card fade-up">
+        <h1 class="headline-lg text-gradient-gold mb-4">Jazakallah Khair.</h1>
+        <p class="text-gray" style="font-size: 1.25rem; line-height: 1.6;">
+            Your generous donation has been successfully processed. May Allah reward you abundantly for your
+            contribution to the Zia ul Ummah Centre.
+        </p>
+
+        <div id="success-message" class="hidden mt-6">
+            <p class="text-white">A receipt has been sent to <span id="customer-email"
+                    class="text-gradient-gold"></span>.</p>
+        </div>
+
+        <a href="index.html" class="btn-primary mt-8 inline-block" style="text-decoration: none;">Return Home</a>
+    </div>
+</body>
+
+</html>

@@ -155,10 +155,13 @@
                     </div>
 
                     <button class="btn-primary btn-massive w-full" id="final-donate-btn">
-                        Donate £50
+                        Proceed to Secure Checkout
                     </button>
 
-                    <div class="secure-badge">
+                    <!-- Stripe Embedded Checkout Mount Point -->
+                    <div id="checkout" class="mt-6"></div>
+
+                    <div class="secure-badge mt-6">
                         <i class="fa-solid fa-lock text-green-light"></i> Secure Checkout Powered by Stripe
                     </div>
                 </div>
@@ -284,6 +287,42 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        // Initialize Stripe.js
+        // NOTE: You must replace this with your actual Stripe PUBLIC key (starts with pk_test_... or pk_live_...)
+        const stripe = Stripe("pk_test_YOUR_PUBLIC_KEY");
+
+        document.getElementById('final-donate-btn').addEventListener('click', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('final-donate-btn');
+            btn.textContent = "Loading Secure Checkout...";
+            btn.disabled = true;
+
+            try {
+                const fetchClientSecret = async () => {
+                    const response = await fetch('/create-checkout-session', {
+                        method: 'POST',
+                    });
+                    const { clientSecret } = await response.json();
+                    return clientSecret;
+                };
+
+                const checkout = await stripe.initEmbeddedCheckout({
+                    fetchClientSecret,
+                });
+
+                // Hide the button and mount the checkout
+                btn.style.display = 'none';
+                checkout.mount('#checkout');
+            } catch (error) {
+                console.error("Error initializing Stripe Checkout:", error);
+                btn.textContent = "Error Loading Checkout (Check your Ruby backend)";
+                btn.style.backgroundColor = "var(--c-error)";
+                btn.disabled = false;
+            }
+        });
+    </script>
 </body>
 
 </html>
