@@ -51,7 +51,8 @@
 
             <div class="nav-actions">
                 <button class="btn-ghost desktop-only" onclick="openModal('login')">Portal Login</button>
-                <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="btn-primary btn-glow" style="text-decoration: none;">
+                <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="btn-primary btn-glow"
+                    style="text-decoration: none;">
                     <span>Donate</span>
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -72,7 +73,8 @@
             <a href="index.html#phases" class="mobile-nav-item">The Build</a>
             <a href="community.html" class="mobile-nav-item">Community Hub</a>
             <a href="affiliate.html" class="mobile-nav-item">Affiliates</a>
-            <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="mobile-nav-item" style="color: var(--c-gold-main);">Donate Portal</a>
+            <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="mobile-nav-item"
+                style="color: var(--c-gold-main);">Donate Portal</a>
             <button class="btn-ghost w-full mt-8" onclick="openModal('login')">Portal Login</button>
         </div>
     </div>
@@ -156,9 +158,11 @@
                         <input type="number" id="custom-donation" class="input-premium" placeholder="Custom Amount">
                     </div>
 
-                    <button class="btn-primary btn-massive w-full" id="final-donate-btn">
+                    <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="btn-primary btn-massive w-full"
+                        style="display: flex; align-items: center; justify-content: center; text-decoration: none;"
+                        id="final-donate-btn">
                         Proceed to Secure Checkout
-                    </button>
+                    </a>
 
                     <!-- Stripe Embedded Checkout Mount Point -->
                     <div id="checkout" class="mt-6"></div>
@@ -289,42 +293,6 @@
     </div>
 
     <script src="script.js"></script>
-    <script src="https://js.stripe.com/v3/"></script>
-    <script>
-        // Initialize Stripe.js
-        // NOTE: You must replace this with your actual Stripe PUBLIC key (starts with pk_test_... or pk_live_...)
-        const stripe = Stripe("pk_test_YOUR_PUBLIC_KEY");
-
-        document.getElementById('final-donate-btn').addEventListener('click', async (e) => {
-            e.preventDefault();
-            const btn = document.getElementById('final-donate-btn');
-            btn.textContent = "Loading Secure Checkout...";
-            btn.disabled = true;
-
-            try {
-                const fetchClientSecret = async () => {
-                    const response = await fetch('/create-checkout-session', {
-                        method: 'POST',
-                    });
-                    const { clientSecret } = await response.json();
-                    return clientSecret;
-                };
-
-                const checkout = await stripe.initEmbeddedCheckout({
-                    fetchClientSecret,
-                });
-
-                // Hide the button and mount the checkout
-                btn.style.display = 'none';
-                checkout.mount('#checkout');
-            } catch (error) {
-                console.error("Error initializing Stripe Checkout:", error);
-                btn.textContent = "Error Loading Checkout (Check your Ruby backend)";
-                btn.style.backgroundColor = "var(--c-error)";
-                btn.disabled = false;
-            }
-        });
-    </script>
 </body>
 
 </html>
