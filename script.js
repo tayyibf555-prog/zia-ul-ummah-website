@@ -280,7 +280,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const name = families[Math.floor(Math.random() * families.length)];
                     tile.innerHTML = `<div class="tooltip">Sponsored by<br><strong style="color:var(--bg-body)">${name}</strong></div>`;
                 } else {
-                    tile.innerHTML = `<div class="tooltip"><strong>Available</strong><br>Click to sponsor (£500)</div>`;
+                    tile.innerHTML = `<div class="tooltip"><strong>Available</strong><br>Click to sponsor (£250)</div>`;
+                    tile.addEventListener('click', () => {
+                        window.location.href = "https://buy.stripe.com/7sY7sEflQeHu8WF251cwg01";
+                    });
                 }
                 mapGrid.appendChild(tile);
             }
@@ -293,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: "Anonymous", amount: "£50", time: "2 mins ago", msg: "May Allah accept", bg: "var(--c-gold-main)" },
                 { name: "S. Malik", amount: "£250", time: "15 mins ago", msg: "For my late father", bg: "var(--c-green-light)" },
                 { name: "Anonymous", amount: "£20", time: "1 hour ago", msg: "Monthly Sadaqah", bg: "var(--bg-accent)" },
-                { name: "The Khan Family", amount: "£500", time: "3 hours ago", msg: "Musallah Sponsorship", bg: "var(--c-gold-main)" },
+                { name: "The Khan Family", amount: "£250", time: "3 hours ago", msg: "Musallah Sponsorship", bg: "var(--c-gold-main)" },
                 { name: "Aisha R.", amount: "£100", time: "5 hours ago", msg: "Alhamdulillah", bg: "var(--c-green)" }
             ];
 
