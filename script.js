@@ -347,4 +347,52 @@ document.addEventListener('DOMContentLoaded', () => {
     // Call the initializer
     initDonatePortal();
 
+    /* --- INTERACTIVE PHASES TIMELINE --- */
+    const timelineSteps = document.querySelectorAll('.timeline-step');
+    const phasePanels = document.querySelectorAll('.phase-panel');
+    const timelineProgress = document.querySelector('.timeline-progress');
+
+    if (timelineSteps.length > 0 && phasePanels.length > 0) {
+        timelineSteps.forEach((step, index) => {
+            step.addEventListener('click', () => {
+                // Remove active class from all
+                timelineSteps.forEach(s => s.classList.remove('active'));
+                phasePanels.forEach(p => p.classList.remove('active'));
+
+                // Add active class to clicked
+                step.classList.add('active');
+
+                // Show corresponding panel
+                const phaseId = step.getAttribute('data-phase');
+                const panel = document.getElementById(`panel-phase-${phaseId}`);
+                if (panel) panel.classList.add('active');
+
+                // Update timeline progress bar
+                const percentage = (index / (timelineSteps.length - 1)) * 100;
+
+                // Using matchMedia or simple innerWidth check for responsive layout
+                if (window.innerWidth > 1024) {
+                    // Desktop (Vertical)
+                    timelineProgress.style.height = `${percentage}%`;
+                    timelineProgress.style.width = '100%';
+                } else {
+                    // Mobile (Horizontal)
+                    timelineProgress.style.width = `${percentage}%`;
+                    timelineProgress.style.height = '100%';
+                }
+            });
+        });
+
+        // Ensure resizing recalculates the visual progress bar dimensions
+        window.addEventListener('resize', () => {
+            const activeStep = document.querySelector('.timeline-step.active');
+            if (activeStep) activeStep.click();
+        });
+
+        // Initializer trigger
+        setTimeout(() => {
+            if (timelineSteps[0]) timelineSteps[0].click();
+        }, 100);
+    }
+
 });

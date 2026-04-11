@@ -308,7 +308,7 @@
             </div>
         </div>
     </section>
-    <!-- Architecture Phases Section -->
+    <!-- Architecture Phases Section (Interactive) -->
     <section class="phases-section" id="phases" style="padding: 6rem 5%; background: var(--bg-body);">
         <div class="container" style="max-width: var(--container-w); margin: 0 auto;">
             <div class="section-intro center fade-up" style="margin-bottom: 4rem;">
@@ -316,87 +316,131 @@
                     The Build Project
                 </div>
                 <h2 class="headline-lg">The Architecture of <span class="text-gradient-gold">Tomorrow.</span></h2>
-                <p class="text-gray mt-4" style="font-size: 1.15rem; max-width: 600px; margin: 0 auto;">Explore the phases of our expansion as we build a space for generations to come.</p>
+                <p class="text-gray mt-4" style="font-size: 1.15rem; max-width: 600px; margin: 0 auto;">Interact with our timeline to explore the phases of our expansion as we build a space for generations to come.</p>
             </div>
 
-            <div class="phases-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <div class="interactive-builder glass-panel border-premium fade-up">
                 
-                <!-- Phase 0 -->
-                <div class="bento-item glass-panel border-premium fade-up" style="position: relative; overflow: hidden; display: flex; flex-direction: column;">
-                    <div style="position: absolute; top: -20px; right: -20px; font-size: 8rem; font-weight: 800; color: rgba(201,168,76,0.05); font-family: var(--font-sans); line-height: 1; z-index: 0; pointer-events: none;">0</div>
-                    <div style="position: relative; z-index: 1; flex: 1;">
-                        <div class="text-gradient-gold mb-2" style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Phase 00: Interior</div>
-                        <h3 class="headline-md text-white mb-4" style="font-size: 1.5rem;">Laying the Groundwork</h3>
-                        <p class="text-gray mb-6">Our journey begins with the foundation. This phase establishes the subtle, stepped base and the inner prayer area floor plan—the literal groundwork upon which our community will gather.</p>
-                    </div>
-                    <div style="position: relative; z-index: 1; margin-top: auto;">
-                        <div class="status-badge w-full" style="text-align: center; background: rgba(37,211,102,0.1); color: #25D366; border: 1px solid rgba(37,211,102,0.2); padding: 0.5rem; border-radius: 8px; font-weight: 600;">Completed</div>
+                <!-- Interactive Timeline Controls -->
+                <div class="phase-timeline-controls">
+                    <button class="timeline-step active" data-phase="0">
+                        <span class="step-indicator"></span>
+                        <span class="step-number">00</span>
+                        <span class="step-label">Interior</span>
+                    </button>
+                    <button class="timeline-step" data-phase="1">
+                        <span class="step-indicator"></span>
+                        <span class="step-number">01</span>
+                        <span class="step-label">Foundation</span>
+                    </button>
+                    <button class="timeline-step" data-phase="2">
+                        <span class="step-indicator"></span>
+                        <span class="step-number">02</span>
+                        <span class="step-label">Structure</span>
+                    </button>
+                    <button class="timeline-step" data-phase="3">
+                        <span class="step-indicator"></span>
+                        <span class="step-number">03</span>
+                        <span class="step-label">The Apex</span>
+                    </button>
+                    <!-- Visual track line connecting the dots -->
+                    <div class="timeline-track">
+                         <div class="timeline-progress" style="width: 12.5%;"></div> <!-- dynamically updated -->
                     </div>
                 </div>
 
-                <!-- Phase 1 -->
-                <div class="bento-item glass-panel border-premium fade-up" style="position: relative; overflow: hidden; display: flex; flex-direction: column; transition-delay: 0.1s;">
-                    <div style="position: absolute; top: -20px; right: -20px; font-size: 8rem; font-weight: 800; color: rgba(201,168,76,0.05); font-family: var(--font-sans); line-height: 1; z-index: 0; pointer-events: none;">1</div>
-                    <div style="position: relative; z-index: 1; flex: 1;">
-                        <div class="text-gradient-gold mb-2" style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Phase 01: Foundation</div>
-                        <h3 class="headline-md text-white mb-4" style="font-size: 1.5rem;">Walls of Unity</h3>
-                        <p class="text-gray mb-6">Raising the expansive earth-toned exterior walls. This phase defines the main hall's volume, featuring distinct circular and arched window cutouts to allow natural light to fill the spiritual space.</p>
-                    </div>
-                    <div style="position: relative; z-index: 1; margin-top: auto;">
-                        <div class="mini-progress" style="margin-bottom: 1rem;">
-                            <div class="prog-text" style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-gray); margin-bottom: 0.5rem;"><span>£45,000 raised</span> <span>Goal: £80k</span></div>
-                            <div class="prog-bar" style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                                <div class="fill" style="width: 56%; height: 100%; background: var(--c-gold-main); border-radius: 4px;"></div>
+                <!-- Dynamic Content Area -->
+                <div class="phase-panels-container">
+                    
+                    <!-- Phase 0 -->
+                    <div class="phase-panel active" id="panel-phase-0">
+                        <div class="panel-content glass-panel" style="background: rgba(201,168,76, 0.03);">
+                            <div class="panel-text">
+                                <h3 class="headline-md text-white mb-4" style="font-size: 2rem;">Laying the Groundwork</h3>
+                                <p class="text-gray mb-6 text-lg">Our journey begins with the foundation. This phase establishes the subtle, stepped base and the inner prayer area floor plan—the literal groundwork upon which our community will gather.</p>
+                                <ul class="phase-features" style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                                    <li class="mb-2 text-gray"><i class="fa-solid fa-check text-green-light mr-2"></i> Inner prayer area mapping</li>
+                                    <li class="mb-2 text-gray"><i class="fa-solid fa-check text-green-light mr-2"></i> Initial plumbing and electrical channels</li>
+                                    <li class="mb-2 text-gray"><i class="fa-solid fa-check text-green-light mr-2"></i> Main mihrab positional setting</li>
+                                </ul>
+                                <div class="status-badge" style="display:inline-block; background: rgba(37,211,102,0.1); color: #25D366; border: 1px solid rgba(37,211,102,0.2); padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600;">Phase 00 Completed</div>
                             </div>
                         </div>
-                        <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="btn-ghost w-full" style="text-align: center; padding: 0.6rem; font-size: 0.9rem;">Fund Phase 1</a>
                     </div>
-                </div>
 
-                <!-- Phase 2 -->
-                <div class="bento-item glass-panel border-premium fade-up" style="position: relative; overflow: hidden; display: flex; flex-direction: column; transition-delay: 0.2s;">
-                    <div style="position: absolute; top: -20px; right: -20px; font-size: 8rem; font-weight: 800; color: rgba(201,168,76,0.05); font-family: var(--font-sans); line-height: 1; z-index: 0; pointer-events: none;">2</div>
-                    <div style="position: relative; z-index: 1; flex: 1;">
-                        <div class="text-gradient-gold mb-2" style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Phase 02: Structure</div>
-                        <h3 class="headline-md text-white mb-4" style="font-size: 1.5rem;">The Welcoming Arch</h3>
-                        <p class="text-gray mb-6">Constructing the distinguished front entrance porch and the raised roof parapets. The massive pointed archway serves as a beautiful, welcoming gateway for all who enter.</p>
-                    </div>
-                    <div style="position: relative; z-index: 1; margin-top: auto;">
-                        <div class="mini-progress" style="margin-bottom: 1rem;">
-                            <div class="prog-text" style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-gray); margin-bottom: 0.5rem;"><span>£5,700 raised</span> <span>Goal: £60k</span></div>
-                            <div class="prog-bar" style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                                <div class="fill" style="width: 9%; height: 100%; background: var(--c-gold-main); border-radius: 4px;"></div>
+                    <!-- Phase 1 -->
+                    <div class="phase-panel" id="panel-phase-1">
+                        <div class="panel-content glass-panel" style="background: rgba(201,168,76, 0.03);">
+                            <div class="panel-text">
+                                <h3 class="headline-md text-white mb-4" style="font-size: 2rem;">Walls of Unity</h3>
+                                <p class="text-gray mb-6 text-lg">Raising the expansive earth-toned exterior walls. This phase defines the main hall's volume, featuring distinct circular and arched window cutouts to allow natural light to fill the spiritual space.</p>
+                                <ul class="phase-features" style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                                    <li class="mb-2 text-gray"><i class="fa-solid fa-arrow-right text-gradient-gold mr-2"></i> Acoustic geometric panelling</li>
+                                    <li class="mb-2 text-gray"><i class="fa-solid fa-arrow-right text-gradient-gold mr-2"></i> Climate-controlled ventilation walls</li>
+                                    <li class="mb-2 text-gray"><i class="fa-solid fa-arrow-right text-gradient-gold mr-2"></i> Primary structural support beams</li>
+                                </ul>
+                                <div class="mini-progress" style="margin-bottom: 1.5rem; max-width: 400px;">
+                                    <div class="prog-text" style="display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text-gray); margin-bottom: 0.5rem; font-weight:500;"><span>£45,000 raised</span> <span>Goal: £80,000</span></div>
+                                    <div class="prog-bar" style="height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                                        <div class="fill" style="width: 56%; height: 100%; background: var(--c-gold-main); border-radius: 4px; box-shadow: 0 0 10px var(--c-gold-main);"></div>
+                                    </div>
+                                </div>
+                                <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="btn-primary" style="display: inline-block;">Fund Phase 01</a>
                             </div>
                         </div>
-                        <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="btn-ghost w-full" style="text-align: center; padding: 0.6rem; font-size: 0.9rem;">Fund Phase 2</a>
                     </div>
-                </div>
 
-                <!-- Phase 3 -->
-                <div class="bento-item glass-panel border-premium fade-up" style="position: relative; overflow: hidden; display: flex; flex-direction: column; transition-delay: 0.3s;">
-                    <div style="position: absolute; top: -20px; right: -20px; font-size: 8rem; font-weight: 800; color: rgba(201,168,76,0.05); font-family: var(--font-sans); line-height: 1; z-index: 0; pointer-events: none;">3</div>
-                    <div style="position: relative; z-index: 1; flex: 1;">
-                        <div class="text-gradient-gold mb-2" style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Phase 03: The Apex</div>
-                        <h3 class="headline-md text-white mb-4" style="font-size: 1.5rem;">The Guiding Beacon</h3>
-                        <p class="text-gray mb-6">Erecting the single, towering minaret adorned with its golden finial. This final architectural piece completes the structure, serving as a landmark of faith and community.</p>
-                    </div>
-                    <div style="position: relative; z-index: 1; margin-top: auto;">
-                        <div class="mini-progress" style="margin-bottom: 1rem;">
-                            <div class="prog-text" style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-gray); margin-bottom: 0.5rem;"><span>£0 raised</span> <span>Goal: £40k</span></div>
-                            <div class="prog-bar" style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                                <div class="fill" style="width: 0%; height: 100%; background: var(--c-gold-main); border-radius: 4px;"></div>
+                    <!-- Phase 2 -->
+                    <div class="phase-panel" id="panel-phase-2">
+                        <div class="panel-content glass-panel" style="background: rgba(201,168,76, 0.03);">
+                            <div class="panel-text">
+                                <h3 class="headline-md text-white mb-4" style="font-size: 2rem;">The Welcoming Arch</h3>
+                                <p class="text-gray mb-6 text-lg">Constructing the distinguished front entrance porch and the raised roof parapets. The massive pointed archway serves as a beautiful, welcoming gateway for all who enter.</p>
+                                <ul class="phase-features" style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                                    <li class="mb-2 text-gray"><i class="fa-solid fa-arrow-right text-gradient-gold mr-2"></i> Grand pointed archway installation</li>
+                                    <li class="mb-2 text-gray"><i class="fa-solid fa-arrow-right text-gradient-gold mr-2"></i> Elevated flat roof parapet borders</li>
+                                    <li class="mb-2 text-gray"><i class="fa-solid fa-arrow-right text-gradient-gold mr-2"></i> Porch stepped entry</li>
+                                </ul>
+                                <div class="mini-progress" style="margin-bottom: 1.5rem; max-width: 400px;">
+                                    <div class="prog-text" style="display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text-gray); margin-bottom: 0.5rem; font-weight:500;"><span>£5,700 raised</span> <span>Goal: £60,000</span></div>
+                                    <div class="prog-bar" style="height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                                        <div class="fill" style="width: 9%; height: 100%; background: var(--c-gold-main); border-radius: 4px; box-shadow: 0 0 10px var(--c-gold-main);"></div>
+                                    </div>
+                                </div>
+                                <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="btn-primary" style="display: inline-block;">Fund Phase 02</a>
                             </div>
                         </div>
-                        <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="btn-ghost w-full" style="text-align: center; padding: 0.6rem; font-size: 0.9rem;">Fund Phase 3</a>
                     </div>
-                </div>
 
+                    <!-- Phase 3 -->
+                    <div class="phase-panel" id="panel-phase-3">
+                        <div class="panel-content glass-panel" style="background: rgba(201,168,76, 0.03);">
+                            <div class="panel-text">
+                                <h3 class="headline-md text-white mb-4" style="font-size: 2rem;">The Guiding Beacon</h3>
+                                <p class="text-gray mb-6 text-lg">Erecting the single, towering minaret adorned with its golden finial. This final architectural piece completes the structure, serving as a landmark of faith and community.</p>
+                                <ul class="phase-features" style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                                    <li class="mb-2 text-gray"><i class="fa-solid fa-arrow-right text-gradient-gold mr-2"></i> Minaret foundation and structure</li>
+                                    <li class="mb-2 text-gray"><i class="fa-solid fa-arrow-right text-gradient-gold mr-2"></i> Acoustic sound system for Adhan</li>
+                                    <li class="mb-2 text-gray"><i class="fa-solid fa-arrow-right text-gradient-gold mr-2"></i> Golden finial capping</li>
+                                </ul>
+                                <div class="mini-progress" style="margin-bottom: 1.5rem; max-width: 400px;">
+                                    <div class="prog-text" style="display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text-gray); margin-bottom: 0.5rem; font-weight:500;"><span>£0 raised</span> <span>Goal: £40,000</span></div>
+                                    <div class="prog-bar" style="height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                                        <div class="fill" style="width: 0%; height: 100%; background: var(--c-gold-main); border-radius: 4px; box-shadow: 0 0 10px var(--c-gold-main);"></div>
+                                    </div>
+                                </div>
+                                <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="btn-primary" style="display: inline-block;">Fund Phase 03</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
             
-            <div class="center mt-12 fade-up" style="text-align: center; margin-top: 4rem;">
-                <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="btn-primary" style="display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; padding: 1rem 3rem;">
-                    <span>Sponsor the Full Project</span>
-                    <i class="fa-solid fa-arrow-right"></i>
+            <div class="center mt-8 fade-up" style="text-align: center;">
+                <a href="donate.html" class="btn-ghost" style="display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; padding: 1rem 3rem;">
+                    <span>View Interactive Floorplan</span>
+                    <i class="fa-solid fa-map-location-dot"></i>
                 </a>
             </div>
         </div>
