@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 tile.style.transitionDelay = `${(i % 10) * 0.02}s`;
 
                 // Randomly mark some as sponsored to show social proof
-                const isSponsored = false;
+                const isSponsored = Math.random() < 0.35;
                 if (isSponsored) {
                     tile.classList.add('sponsored');
                     const families = ["The Khan Family", "Anonymous", "Ali Family", "Hussain Family", "In Memory of Parents", "Syed Family"];
