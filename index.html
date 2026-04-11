@@ -308,248 +308,100 @@
             </div>
         </div>
     </section>
-    <!-- The 3D Build Interface -->
-    <section class="build-section" id="phases">
-        <div class="container">
-            <div class="section-intro center fade-up">
+    <!-- Architecture Phases Section -->
+    <section class="phases-section" id="phases" style="padding: 6rem 5%; background: var(--bg-body);">
+        <div class="container" style="max-width: var(--container-w); margin: 0 auto;">
+            <div class="section-intro center fade-up" style="margin-bottom: 4rem;">
+                <div class="text-gradient-gold mb-4" style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.15em; text-transform: uppercase;">
+                    The Build Project
+                </div>
                 <h2 class="headline-lg">The Architecture of <span class="text-gradient-gold">Tomorrow.</span></h2>
-                <p>Interact with the 3D model to explore our expansion phases.</p>
+                <p class="text-gray mt-4" style="font-size: 1.15rem; max-width: 600px; margin: 0 auto;">Explore the phases of our expansion as we build a space for generations to come.</p>
             </div>
 
-            <div class="build-interface glass-panel border-premium fade-up">
-
-                <!-- Controls -->
-                <div class="phase-controls">
-                    <button class="phase-tab active" data-phase="0">
-                        <span class="step-num">00</span> Interior
-                    </button>
-                    <button class="phase-tab" data-phase="1">
-                        <span class="step-num">01</span> Foundation
-                    </button>
-                    <button class="phase-tab" data-phase="2">
-                        <span class="step-num">02</span> Structure
-                    </button>
-                    <button class="phase-tab" data-phase="3">
-                        <span class="step-num">03</span> The Apex
-                    </button>
+            <div class="phases-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                
+                <!-- Phase 0 -->
+                <div class="bento-item glass-panel border-premium fade-up" style="position: relative; overflow: hidden; display: flex; flex-direction: column;">
+                    <div style="position: absolute; top: -20px; right: -20px; font-size: 8rem; font-weight: 800; color: rgba(201,168,76,0.05); font-family: var(--font-sans); line-height: 1; z-index: 0; pointer-events: none;">0</div>
+                    <div style="position: relative; z-index: 1; flex: 1;">
+                        <div class="text-gradient-gold mb-2" style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Phase 00: Interior</div>
+                        <h3 class="headline-md text-white mb-4" style="font-size: 1.5rem;">Laying the Groundwork</h3>
+                        <p class="text-gray mb-6">Our journey begins with the foundation. This phase establishes the subtle, stepped base and the inner prayer area floor plan—the literal groundwork upon which our community will gather.</p>
+                    </div>
+                    <div style="position: relative; z-index: 1; margin-top: auto;">
+                        <div class="status-badge w-full" style="text-align: center; background: rgba(37,211,102,0.1); color: #25D366; border: 1px solid rgba(37,211,102,0.2); padding: 0.5rem; border-radius: 8px; font-weight: 600;">Completed</div>
+                    </div>
                 </div>
 
-                <div class="build-display-area">
-
-                    <!-- Text Info Side -->
-                    <div class="phase-info-blocks">
-                        <div class="info-block active" id="desc-phase-0">
-                            <h3 class="headline-md">Laying the Groundwork</h3>
-                            <p class="text-gray">Our journey begins with the foundation. This phase establishes the
-                                subtle, stepped base and the inner prayer area floor plan—the literal groundwork upon
-                                which our community will gather.</p>
-                            <div class="status-badge">Completed</div>
-                        </div>
-
-                        <div class="info-block" id="desc-phase-1">
-                            <h3 class="headline-md">Walls of Unity</h3>
-                            <p class="text-gray">Raising the expansive earth-toned exterior walls. This phase defines
-                                the main hall's volume, featuring distinct circular and arched window cutouts to allow
-                                natural light to fill the spiritual space.</p>
-                            <div class="mini-progress">
-                                <div class="prog-text"><span>£45,000 raised</span> <span>Goal: £80k</span></div>
-                                <div class="prog-bar">
-                                    <div class="fill" style="width: 56%;"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="info-block" id="desc-phase-2">
-                            <h3 class="headline-md">The Welcoming Arch</h3>
-                            <p class="text-gray">Constructing the distinguished front entrance porch and the raised roof
-                                parapets. The massive pointed archway serves as a beautiful, welcoming gateway for all
-                                who enter.</p>
-                            <div class="mini-progress">
-                                <div class="prog-text"><span>£5,700 raised</span> <span>Goal: £60k</span></div>
-                                <div class="prog-bar">
-                                    <div class="fill" style="width: 9%;"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="info-block" id="desc-phase-3">
-                            <h3 class="headline-md">The Guiding Beacon</h3>
-                            <p class="text-gray">Erecting the single, towering minaret adorned with its golden finial.
-                                This final architectural piece completes the structure, serving as a landmark of faith
-                                and community.</p>
-                            <div class="mini-progress">
-                                <div class="prog-text"><span>£0 raised</span> <span>Goal: £40k</span></div>
-                                <div class="prog-bar">
-                                    <div class="fill" style="width: 0%;"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="btn-primary w-full mt-6"
-                            style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Fund
-                            This Phase</a>
+                <!-- Phase 1 -->
+                <div class="bento-item glass-panel border-premium fade-up" style="position: relative; overflow: hidden; display: flex; flex-direction: column; transition-delay: 0.1s;">
+                    <div style="position: absolute; top: -20px; right: -20px; font-size: 8rem; font-weight: 800; color: rgba(201,168,76,0.05); font-family: var(--font-sans); line-height: 1; z-index: 0; pointer-events: none;">1</div>
+                    <div style="position: relative; z-index: 1; flex: 1;">
+                        <div class="text-gradient-gold mb-2" style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Phase 01: Foundation</div>
+                        <h3 class="headline-md text-white mb-4" style="font-size: 1.5rem;">Walls of Unity</h3>
+                        <p class="text-gray mb-6">Raising the expansive earth-toned exterior walls. This phase defines the main hall's volume, featuring distinct circular and arched window cutouts to allow natural light to fill the spiritual space.</p>
                     </div>
-
-                    <!-- 3D Model Side -->
-                    <div class="model-viewport">
-                        <div class="viewport-grid"></div>
-                        <!-- THE 3D MASTER ARCHITECTURE (V2.1 Earth-Toned Geometric) -->
-                        <!-- Built ground-up: Foundation -> Walls -> Entrance -> Minaret -->
-                        <div class="scene-3d">
-                            <div class="masjid-3d phase-0-state" id="masjid-container">
-
-                                <!-- PHASE 0: Base & Floorplan -->
-                                <div class="base-group" id="phase-base">
-                                    <div class="cube base-tier">
-                                        <div class="face top"></div>
-                                        <div class="face front shadow-front"></div>
-                                        <div class="face left shadow-left"></div>
-                                    </div>
-                                </div>
-
-                                <!-- PHASE 0: Interior Core (Animated inner walls) -->
-                                <div class="interior-group" id="phase-interior">
-                                    <!-- Glowing floor carpet -->
-                                    <div class="cube inner-carpet">
-                                        <div class="face top"></div>
-                                    </div>
-                                    <!-- Center glowing block representing minbar/mihrab -->
-                                    <div class="cube inner-block">
-                                        <div class="face top"></div>
-                                        <div class="face front shadow-front"></div>
-                                        <div class="face left shadow-left"></div>
-                                    </div>
-                                    <!-- Transparent Glass-like partition pillars -->
-                                    <div class="cube inner-wall iw-1">
-                                        <div class="face top"></div>
-                                        <div class="face front shadow-front"></div>
-                                        <div class="face left shadow-left"></div>
-                                    </div>
-                                    <div class="cube inner-wall iw-2">
-                                        <div class="face top"></div>
-                                        <div class="face front shadow-front"></div>
-                                        <div class="face left shadow-left"></div>
-                                    </div>
-                                    <div class="cube inner-wall iw-3">
-                                        <div class="face top"></div>
-                                        <div class="face front shadow-front"></div>
-                                        <div class="face left shadow-left"></div>
-                                    </div>
-                                    <div class="cube inner-wall iw-4">
-                                        <div class="face top"></div>
-                                        <div class="face front shadow-front"></div>
-                                        <div class="face left shadow-left"></div>
-                                    </div>
-                                </div>
-
-                                <!-- PHASE 1: Main Hall Ext Walls -->
-                                <div class="main-hall-group" id="phase-hall">
-                                    <div class="cube main-hall">
-                                        <!-- Front face with arched windows -->
-                                        <div class="face front shadow-front">
-                                            <div class="arch-window left-w"></div>
-                                            <div class="arch-window right-w"></div>
-                                        </div>
-                                        <div class="face back"></div>
-                                        <!-- Left face with circular window cutouts -->
-                                        <div class="face left shadow-left">
-                                            <div class="circle-window c1"></div>
-                                            <div class="circle-window c2"></div>
-                                            <div class="circle-window c3"></div>
-                                        </div>
-                                        <div class="face right"></div>
-                                        <div class="face top"></div> <!-- Flat roof base -->
-                                    </div>
-                                </div>
-
-                                <!-- PHASE 2: Front Porch & Parapets -->
-                                <div class="porch-group" id="phase-porch">
-                                    <!-- Elevated flat roof parapet borders -->
-                                    <div class="cube roof-parapet p-front">
-                                        <div class="face front shadow-front"></div>
-                                        <div class="face left shadow-left"></div>
-                                        <div class="face top"></div>
-                                        <div class="face back"></div>
-                                    </div>
-                                    <div class="cube roof-parapet p-left">
-                                        <div class="face front shadow-front"></div>
-                                        <div class="face left shadow-left"></div>
-                                        <div class="face top"></div>
-                                    </div>
-                                    <div class="cube roof-parapet p-right">
-                                        <div class="face front shadow-front"></div>
-                                        <div class="face right"></div>
-                                        <div class="face top"></div>
-                                    </div>
-                                    <div class="cube roof-parapet p-back">
-                                        <div class="face back"></div>
-                                        <div class="face left shadow-left"></div>
-                                        <div class="face top"></div>
-                                    </div>
-
-                                    <!-- Protruding Front Entrance block -->
-                                    <div class="cube front-porch">
-                                        <div class="face front shadow-front">
-                                            <div class="grand-arch"></div> <!-- The large pointed archway -->
-                                        </div>
-                                        <div class="face left shadow-left">
-                                            <div class="arch-window small"></div>
-                                        </div>
-                                        <div class="face right">
-                                            <div class="arch-window small"></div>
-                                        </div>
-                                        <div class="face top"></div>
-                                    </div>
-                                    <!-- Porch stepped entry -->
-                                    <div class="cube porch-steps">
-                                        <div class="face top"></div>
-                                        <div class="face front shadow-front"></div>
-                                        <div class="face left shadow-left"></div>
-                                    </div>
-                                </div>
-
-                                <!-- PHASE 3: The Single Minaret -->
-                                <div class="minaret-group" id="phase-minaret">
-                                    <div class="cube tall-minaret">
-                                        <div class="face front shadow-front">
-                                            <div class="minaret-slit m1"></div>
-                                            <div class="minaret-slit m2"></div>
-                                        </div>
-                                        <div class="face left shadow-left">
-                                            <div class="minaret-slit m1"></div>
-                                            <div class="minaret-slit m2"></div>
-                                        </div>
-                                        <div class="face right"></div>
-                                        <div class="face back"></div>
-                                        <div class="face top"></div>
-                                        <!-- Top tier architectural element -->
-                                        <div class="cube minaret-top">
-                                            <div class="face front shadow-front">
-                                                <div class="min-arch"></div>
-                                            </div>
-                                            <div class="face left shadow-left">
-                                                <div class="min-arch"></div>
-                                            </div>
-                                            <div class="face top"></div>
-                                            <div class="finial gold"></div>
-                                        </div>
-                                    </div>
-                                    <!-- Minaret stepped base -->
-                                    <div class="cube minaret-base">
-                                        <div class="face top"></div>
-                                        <div class="face front shadow-front"></div>
-                                        <div class="face left shadow-left"></div>
-                                    </div>
-                                </div>
+                    <div style="position: relative; z-index: 1; margin-top: auto;">
+                        <div class="mini-progress" style="margin-bottom: 1rem;">
+                            <div class="prog-text" style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-gray); margin-bottom: 0.5rem;"><span>£45,000 raised</span> <span>Goal: £80k</span></div>
+                            <div class="prog-bar" style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                                <div class="fill" style="width: 56%; height: 100%; background: var(--c-gold-main); border-radius: 4px;"></div>
                             </div>
                         </div>
+                        <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="btn-ghost w-full" style="text-align: center; padding: 0.6rem; font-size: 0.9rem;">Fund Phase 1</a>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="bento-item glass-panel border-premium fade-up" style="position: relative; overflow: hidden; display: flex; flex-direction: column; transition-delay: 0.2s;">
+                    <div style="position: absolute; top: -20px; right: -20px; font-size: 8rem; font-weight: 800; color: rgba(201,168,76,0.05); font-family: var(--font-sans); line-height: 1; z-index: 0; pointer-events: none;">2</div>
+                    <div style="position: relative; z-index: 1; flex: 1;">
+                        <div class="text-gradient-gold mb-2" style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Phase 02: Structure</div>
+                        <h3 class="headline-md text-white mb-4" style="font-size: 1.5rem;">The Welcoming Arch</h3>
+                        <p class="text-gray mb-6">Constructing the distinguished front entrance porch and the raised roof parapets. The massive pointed archway serves as a beautiful, welcoming gateway for all who enter.</p>
+                    </div>
+                    <div style="position: relative; z-index: 1; margin-top: auto;">
+                        <div class="mini-progress" style="margin-bottom: 1rem;">
+                            <div class="prog-text" style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-gray); margin-bottom: 0.5rem;"><span>£5,700 raised</span> <span>Goal: £60k</span></div>
+                            <div class="prog-bar" style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                                <div class="fill" style="width: 9%; height: 100%; background: var(--c-gold-main); border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="btn-ghost w-full" style="text-align: center; padding: 0.6rem; font-size: 0.9rem;">Fund Phase 2</a>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="bento-item glass-panel border-premium fade-up" style="position: relative; overflow: hidden; display: flex; flex-direction: column; transition-delay: 0.3s;">
+                    <div style="position: absolute; top: -20px; right: -20px; font-size: 8rem; font-weight: 800; color: rgba(201,168,76,0.05); font-family: var(--font-sans); line-height: 1; z-index: 0; pointer-events: none;">3</div>
+                    <div style="position: relative; z-index: 1; flex: 1;">
+                        <div class="text-gradient-gold mb-2" style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Phase 03: The Apex</div>
+                        <h3 class="headline-md text-white mb-4" style="font-size: 1.5rem;">The Guiding Beacon</h3>
+                        <p class="text-gray mb-6">Erecting the single, towering minaret adorned with its golden finial. This final architectural piece completes the structure, serving as a landmark of faith and community.</p>
+                    </div>
+                    <div style="position: relative; z-index: 1; margin-top: auto;">
+                        <div class="mini-progress" style="margin-bottom: 1rem;">
+                            <div class="prog-text" style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-gray); margin-bottom: 0.5rem;"><span>£0 raised</span> <span>Goal: £40k</span></div>
+                            <div class="prog-bar" style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                                <div class="fill" style="width: 0%; height: 100%; background: var(--c-gold-main); border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="btn-ghost w-full" style="text-align: center; padding: 0.6rem; font-size: 0.9rem;">Fund Phase 3</a>
                     </div>
                 </div>
 
             </div>
-        </div>
+            
+            <div class="center mt-12 fade-up" style="text-align: center; margin-top: 4rem;">
+                <a href="https://buy.stripe.com/7sY9AMddIeHub4N6lhcwg00" class="btn-primary" style="display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; padding: 1rem 3rem;">
+                    <span>Sponsor the Full Project</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
     </section>
+
     <!-- Our News Section -->
     <section class="news-section" id="news" style="padding: 4rem 5%; position: relative; background: var(--bg-body);">
         <div class="container" style="max-width: var(--container-w); margin: 0 auto; position: relative; z-index: 1;">

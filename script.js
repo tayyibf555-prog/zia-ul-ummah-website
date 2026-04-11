@@ -132,49 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    /* --- 3D CINEMATIC MODEL CONTROLLER --- */
-    const phaseTabs = document.querySelectorAll('.phase-tab');
-    const infoBlocks = document.querySelectorAll('.info-block');
-    const masjidContainer = document.getElementById('masjid-container');
-    const scene3d = document.querySelector('.scene-3d');
-
-    // Camera preset angles for different phases to add cinematic feel
-    const cameraPresets = {
-        0: 'translateY(-30px) translateX(-30px) rotateX(82deg) rotateZ(-35deg) scale(0.95)', // Extreme top-down to see over tall walls
-        1: 'translateY(-30px) translateX(-30px) rotateX(82deg) rotateZ(-35deg) scale(0.95)', // Extreme top-down to see over tall walls
-        2: 'translateY(0px) translateX(-40px) rotateX(55deg) rotateZ(-45deg) scale(0.9)', // Rotate down to feature the protruding porch
-        3: 'translateY(30px) translateX(-30px) rotateX(65deg) rotateZ(-40deg) scale(0.75)'   // Pull back and pan up to fit the tall minaret
-    };
-
-    phaseTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const phase = tab.getAttribute('data-phase');
-
-            // 1. Update Tabs UI
-            phaseTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-
-            // 2. Update Info Panel
-            infoBlocks.forEach(block => block.classList.remove('active'));
-            document.getElementById(`desc-phase-${phase}`).classList.add('active');
-
-            // 3. Update Model State Classes
-            // Strip all phase classes first
-            masjidContainer.className = 'masjid-3d';
-
-            // Apply cumulative classes
-            if (phase >= 0) masjidContainer.classList.add('phase-0-state');
-            if (phase >= 1) masjidContainer.classList.add('phase-1-state');
-            if (phase >= 2) masjidContainer.classList.add('phase-2-state');
-            if (phase >= 3) masjidContainer.classList.add('phase-3-state');
-
-            // 4. Transform Camera Angle
-            if (scene3d) {
-                scene3d.style.transform = cameraPresets[phase];
-            }
-        });
-    });
-
+    /* --- 3D CINEMATIC MODEL REPLACED WITH PHASES SECTION --- */
 
     /* --- FINTECH DONATE LOGIC --- */
     const segBtns = document.querySelectorAll('.seg-btn');
